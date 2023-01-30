@@ -1,0 +1,40 @@
+ALGORITHME  check_point_algo
+
+VAR
+	n_word,n_char,n_vowels : integer;
+	character : char;
+
+BEGIN
+	n_word := n_char := n_vowels := 0;	
+	WRITE("saisir votre text");
+
+	REPEAT
+		READ(character)
+
+		IF ((character = '.' AND n_char <> 0)) OR ((character = ' ' AND n_char <> 0))) THEN
+
+			n_word := n_word + 1;
+
+		END_IF
+
+		IF (character  <>  ' '  and character  <> ' . ') THEN
+
+			n_char := n_char + 1;
+
+		END_IF
+			
+		IF (character = 'a' OR 'e' OR 'i' OR 'u' OR 'o') THEN
+
+				n_vowels := n_vowels + 1 ;
+
+		END_IF
+
+	UNTIL( character <> ' . ');
+
+	WRITE( n_word );
+
+	WRITE( n_char );
+
+	WRITE( n_vowels );
+
+END 
